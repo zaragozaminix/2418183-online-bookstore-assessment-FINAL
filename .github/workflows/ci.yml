@@ -26,4 +26,4 @@ jobs:
           pip install pytest bcrypt
 
       - name: Run tests with pytest
-        run: python -m pytest
+        run: PYTHONPATH=. python -m pytest tests/
