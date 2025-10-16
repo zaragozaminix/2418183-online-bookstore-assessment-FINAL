@@ -25,5 +25,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pytest bcrypt
 
-      - name: Run tests with pytest
-        run: PYTHONPATH=. python -m pytest tests/
+      - name: Run tests via script
+        run: |
+          chmod +x run_tests.sh
+          ./run_tests.sh
