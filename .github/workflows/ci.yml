@@ -1,5 +1,5 @@
 # .github/workflows/ci.yml
-name: Python CI Pipeline
+name: Python CI Pipeline (Diagnostic Mode)
 
 on:
   push:
@@ -24,6 +24,17 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pytest bcrypt
+
+      - name:  DIAGNOSTIC - Debug Environment
+        run: |
+          echo "--- CURRENT WORKING DIRECTORY ---"
+          pwd
+          echo "--- FILE AND DIRECTORY LISTING (RECURSIVE) ---"
+          ls -laR
+          echo "--- PYTHON EXECUTABLE PATH ---"
+          which python
+          echo "--- INSTALLED PACKAGES ---"
+          pip list
 
       - name: Run tests via script
         run: |
