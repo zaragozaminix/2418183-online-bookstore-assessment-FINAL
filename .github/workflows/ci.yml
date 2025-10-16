@@ -1,4 +1,5 @@
 # .github/workflows/ci.yml
+# FINAL ATTEMPT WITH PYTHONPATH
 name: Python CI Pipeline
 
 on:
