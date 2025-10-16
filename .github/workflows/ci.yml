@@ -26,4 +26,4 @@ jobs:
           pip install pytest bcrypt
 
       - name: Run tests with pytest
-        run: pytest
+        run: python -m pytest
